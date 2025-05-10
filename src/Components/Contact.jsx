@@ -24,7 +24,7 @@ export default function ContactPage() {
     setStatus('Sending...');
 
     try {
-      const response = await axios.post('http://localhost:5000/send-Contact', formData, {
+      const response = await axios.post('https://ethical-1-xlx7.onrender.com/send-Contact', formData, {
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.status === 200) {
