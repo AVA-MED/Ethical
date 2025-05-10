@@ -27,7 +27,7 @@ const Enquire = () => {
     setStatus("Sending...");
 
     try {
-      const response = await axios.post("http://localhost:5000/send-Enquiry", formData, {
+      const response = await axios.post("https://ethical-1-xlx7.onrender.com/send-Enquiry", formData, {
         headers: { "Content-Type": "application/json" },
       });
 
