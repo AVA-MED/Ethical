@@ -107,10 +107,10 @@ const Laptop3 = () => {
 
 export default Laptop3;
 */
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import InnerImageZoom from 'react-inner-image-zoom';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import mainImg from "/src/assets/203.jpg";
 import thumb1 from "/src/assets/204.jpg";
@@ -131,14 +131,13 @@ const Laptop3 = () => {
       {/* Image Section */}
       <div className="flex-1 flex flex-col items-center">
         <div className="w-full max-w-md overflow-hidden rounded-xl">
-          <InnerImageZoom
-            src={mainImage}
-            zoomSrc={mainImage}
-            zoomType="hover"
-            zoomScale={1.5}
-            className="rounded-lg"
-            hideHint={true}
-          />
+          <Zoom>
+            <img
+              src={mainImage}
+              alt="Zoomable"
+              className="rounded-lg object-cover w-full"
+            />
+          </Zoom>
         </div>
 
         {/* Thumbnails */}

@@ -108,9 +108,8 @@ export default Laptop4;
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import InnerImageZoom from 'react-inner-image-zoom';
-// ❌ Don't import the CSS file, since you're using Tailwind
-// import 'react-inner-image-zoom/style.css';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 // ✅ Import images
 import image1 from "/src/assets/204.jpg";
@@ -131,15 +130,14 @@ const Laptop4 = () => {
       {/* Image Section */}
       <div className="flex-1 flex flex-col items-center">
         <div className="w-full max-w-md overflow-hidden rounded-xl">
-          {/* Inner Image Zoom */}
-          <InnerImageZoom
-            src={mainImage}
-            zoomSrc={mainImage}
-            zoomType="hover"
-            zoomScale={1.5}
-            className="rounded-lg"
-            hideHint={true}
-          />
+          {/* Image Zoom */}
+          <Zoom>
+            <img
+              src={mainImage}
+              alt="Zoomable"
+              className="rounded-lg object-cover w-full"
+            />
+          </Zoom>
         </div>
 
         {/* Thumbnails */}

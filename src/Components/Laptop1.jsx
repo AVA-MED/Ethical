@@ -101,13 +101,10 @@ const Laptop1 = () => {
 };
 
 export default Laptop1;*/
-
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import InnerImageZoom from 'react-inner-image-zoom';
-// ❌ Don't import the CSS file, since you're using Tailwind
-// import 'react-inner-image-zoom/style.css';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 // ✅ Import images
 import imgMain from "/src/assets/201.jpg";
@@ -130,15 +127,13 @@ const Laptop1 = () => {
       {/* Image Section */}
       <div className="flex-1 flex flex-col items-center">
         <div className="w-full max-w-md overflow-hidden rounded-xl">
-          {/* Inner Image Zoom */}
-          <InnerImageZoom
-            src={mainImage}
-            zoomSrc={mainImage}
-            zoomType="hover"
-            zoomScale={1.5}
-            className="rounded-lg"
-            hideHint={true}
-          />
+          <Zoom>
+            <img
+              src={mainImage}
+              alt="Zoomable"
+              className="rounded-lg object-cover w-full"
+            />
+          </Zoom>
         </div>
 
         {/* Thumbnails */}
@@ -188,9 +183,11 @@ const Laptop1 = () => {
 
         {/* Buttons */}
         <div className="flex gap-4 mt-6">
-          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-            Enquiry Now
-          </button>
+          <Link to="/Enquiry">
+            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+              Enquiry Now
+            </button>
+          </Link>
           <Link to="/Laptop">
             <button className="bg-white text-black px-6 py-2 rounded font-semibold hover:bg-gray-200 transition">
               Back Now
@@ -203,4 +200,3 @@ const Laptop1 = () => {
 };
 
 export default Laptop1;
-

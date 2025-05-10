@@ -109,9 +109,8 @@ const Laptop2 = () => {
 export default Laptop2;*/
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import InnerImageZoom from 'react-inner-image-zoom';
-// ❌ Don't import the CSS file, since you're using Tailwind
-// import 'react-inner-image-zoom/style.css';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 import image1 from "/src/assets/202.jpg";
 import image2 from "/src/assets/203.jpg";
@@ -122,7 +121,7 @@ const Laptop2 = () => {
 
   const product = {
     name: "(Refurbished) Lenovo ThinkPad L490 8th Gen Intel Core i5 Thin & Light FHD Laptop",
-    description: "8 GB DDR4 RAM/256 GB SSD/14\" FHD/Windows 11/MS Office/WiFi/Bluetooth/Webcam/Intel Graphics",
+    description: '8 GB DDR4 RAM/256 GB SSD/14" FHD/Windows 11/MS Office/WiFi/Bluetooth/Webcam/Intel Graphics',
     thumbnails: [image2, image3, image1],
   };
 
@@ -131,14 +130,13 @@ const Laptop2 = () => {
       {/* Image Section */}
       <div className="flex-1 flex flex-col items-center">
         <div className="w-full max-w-md overflow-hidden rounded-xl">
-          <InnerImageZoom
-            src={mainImage}
-            zoomSrc={mainImage}
-            zoomType="hover"
-            zoomScale={1.5}
-            className="rounded-lg"
-            hideHint={true}
-          />
+          <Zoom>
+            <img
+              src={mainImage}
+              alt="Zoomable"
+              className="rounded-lg object-cover w-full"
+            />
+          </Zoom>
         </div>
 
         {/* Thumbnails */}
@@ -208,4 +206,5 @@ const Laptop2 = () => {
 };
 
 export default Laptop2;
+
 
